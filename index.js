@@ -1,6 +1,16 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const seen = {};
+  for (let i = 0; i < array.length; i++) {
+    const currentNumber = array[i];
+    const difference = target - currentNumber;
+    if (seen[difference]) {
+      return true;
+    }
+    seen[currentNumber] = true;
+  }
+  return false;
 }
+
 
 /* 
   Write the Big O time complexity of your function here
